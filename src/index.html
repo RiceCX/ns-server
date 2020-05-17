@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- CSS AND SCRIPTS-->
+    <link rel="stylesheet" href="index.css" />
+    <script
+      src="https://kit.fontawesome.com/46d9129d0c.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="public/js/scriptable.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+
+    <!-- OTHER SHIT-->
+    <meta charset="UTF-8" />
+    <title>Hello World!</title>
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="empty"></div>
+      <div class="powerOptions"></div>
+    </div>
+    <div class="mainContent">
+      <div class="empty"></div>
+      <div class="playerlist">
+        <h1 align="center">Players (0/20)</h1>
+        <hr />
+        <div class="playerGrid">
+          <div class="player noselect selectable" onclick="playerClicked('AndyIsCool5463')">
+            <span style="display: hidden;">
+              <img
+                src="https://crafatar.com/avatars/853c80ef3c3749fdaa49938b674adae6?size=44"
+                class="list-avatar"
+              />
+              <span class="name" style="float: inherit;"></h2>
+                AndyIsCool5453
+              </span>
+            </span>
+          </div>
+          <div class="player noselect selectable" onclick="playerClicked('AndyIsCool5463')">
+            <span style="display: hidden;">
+              <img src="https://crafatar.com/avatars/853c80ef3c3749fdaa49938b674adae6?size=44" class="list-avatar" />
+              <span class="name" style="float: inherit;"></h2>
+                AndyIsCool5453
+              </span>
+            </span>
+          </div>
+          <div class="player noselect selectable" onclick="playerClicked('AndyIsCool5463')">
+            <span style="display: hidden;">
+              <img src="https://crafatar.com/avatars/853c80ef3c3749fdaa49938b674adae6?size=44" class="list-avatar" />
+              <span class="name" style="float: inherit;"></h2>
+                AndyIsCool5453
+              </span>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="empty">
+        <h1 align="center">Actions</h1>
+        <hr />
+        <div class="actionList" style="display: inline-block;">
+          <div class="action selectable">
+            Kick
+          </div>
+          <div class="action selectable">
+            Ban
+          </div>
+          <div class="action selectable">
+            Teleport
+          </div>
+        </div>
+      </div>
+      <div class="console">
+        <div id="output">
+          <!-- <code style="white-space: pre" id="messages"></code> -->
+          <li id="messages"></li>
+        </div>
+        <div id="commandBox">
+          <input id="commandInput" type="text" />
+          <button id="commandSend">-></button>
+          <span class="faButtons">
+            <i id="powerOff" class="fas fa-power-off fa-lg"></i>
+            <i
+              onclick="alert('restart')"
+              id="restart"
+              class="fas fa-sync fa-lg"
+            ></i>
+            <i id="settings" class="fas fa-cog fa-lg"></i>
+          </span>
+        </div>
+      </div>
+      <div class="empty"></div>
+    </div>
+  </body>
+</html>

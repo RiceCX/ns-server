@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings</title>
+  </head>
+  <body>
+    <div class="form-group">
+      <span>
+        <button onClick="chooseJar()">Choose JAR</button>
+        <code id="chosenJar">No File Chosen</code>
+      </span>
+    </div>
+    <div class="form-group">
+      <span>
+        <button onClick="chooseFolder()">Choose Folder</button>
+        <code id="chosenFolder">No Folder Chosen</code>
+      </span>
+    </div>
+    <button onclick="window.close()">Close.</button>
+  </body>
+</html>
+<script>
+  function chooseJar() {
+    const jar = window.dialog
+      .showOpenDialog({
+        properties: ["openFile"],
+        filters: [{ name: "Custom File Type", extensions: ["jar"] }],
+      })
+      .then((choseFile) => {
+        if (choseFile.canceled) return;
+        document.getElementById("chosenJar").innerHTML = choseFile.filePaths[0];
+        window.ipcRenderer.send("serverJar", choseFile.filePaths[0]);
+      });
+  }
+  function chooseFolder() {
+    window.dialog
+      .showOpenDialog({
+        properties: ["openDirectory"],
+      })
+      .then((folder) => {
+        if (folder.canceled) return;
+        document.getElementById("chosenFolder").innerHTML = folder.filePaths[0];
+        window.ipcRenderer.send("serverDir", folder.filePaths[0]);
+      });
+  }
+</script>
